@@ -1,0 +1,33 @@
+{
+  "name": "bgs-linebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taninchot0919/BGS-Linebot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Taninchot0919/BGS-Linebot/issues"
+  },
+  "homepage": "https://github.com/Taninchot0919/BGS-Linebot#readme",
+  "dependencies": {
+    "@line/bot-sdk": "^7.4.0",
+    "axios": "^0.24.0",
+    "dayjs": "^1.10.7",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "firebase-admin": "^10.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
