@@ -8,6 +8,11 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
+  "nodemonConfig": {
+    "ignore": [
+      "*.json"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Taninchot0919/BGS-Linebot.git"
