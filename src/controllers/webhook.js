@@ -3,10 +3,15 @@ const { middleware } = require("../configs/line")
 const lineAPI = require("../services/lineAPI")
 
 router.post("/", middleware, async (req, res) => {
-  if (req.body.events.length > 0) {
-    await lineAPI(req.body.events)
+  try {
+    if (req.body.events.length > 0) {
+      await lineAPI(req.body.events)
+    }
+    return res.status(200).send({ msg: "Send Message Success" })
+  } catch (error) {
+    console.log(error.message)
+    return res.status(500).send({ error: error.message })
   }
-  return res.send(200)
 })
 
 module.exports = router
