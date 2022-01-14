@@ -1,6 +1,4 @@
 const express = require('express')
-const line = require('@line/bot-sdk')
-const dayjs = require("dayjs")
 require('dotenv').config()
 
 const app = express()
@@ -13,3 +11,5 @@ app.listen(PORT, () => {
 app.get("/health", (req, res) => {
   return res.send({ msg: "The server is healthy" })
 })
+
+app.use("/webhook", require("./controllers/webhook"))
