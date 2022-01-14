@@ -1,7 +1,6 @@
 const firestore = require('firebase-admin');
-const fs = require("fs")
 
-let certJSON = JSON.stringify({
+let certJSON = {
   type: process.env.type,
   project_id: process.env.project_id,
   private_key_id: process.env.private_key_id,
@@ -12,12 +11,9 @@ let certJSON = JSON.stringify({
   token_uri: process.env.token_uri,
   auth_provider_x509_cert_url: process.env.auth_provider_x509_cert_url,
   client_x509_cert_url: process.env.client_x509_cert_url
-})
+}
 
-fs.writeFileSync("firebase.json", certJSON)
-firestore.initializeApp({
-  credential: firestore.credential.cert("firebase.json")
-});
+firestore.initializeApp(certJSON);
 
 module.exports = firestore
 
