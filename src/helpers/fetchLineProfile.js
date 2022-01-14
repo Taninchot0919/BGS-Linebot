@@ -5,13 +5,13 @@ const config = {
   channelSecret: process.env.channelSecret
 }
 
-const getProfile = async (userId) => {
+const getUserProfile = async (userId) => {
   const user = await axios.get(`https://api.line.me/v2/bot/profile/${userId}`, {
     headers: {
       Authorization: `Bearer ${config.channelAccessToken}`
     }
   })
-  return user.data.displayName
+  return user.data
 }
 
-module.exports = { getProfile }
+module.exports = { getUserProfile }
